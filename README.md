@@ -18,6 +18,10 @@ The top 100 most starred repos on Github along with commits from the last 24 hrs
 - (Authentication adapter for Github API)[https://github.com/octokit/auth.js]
 
 
+### Monitoring 
+
+- (Sentry)[https://sentry.io]
+
 ## Deploy your own
 
 Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
