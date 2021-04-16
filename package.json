@@ -31,9 +31,12 @@
     "@sentry/react": "^6.2.5",
     "@sentry/tracing": "^6.2.5",
     "@sentry/webpack-plugin": "^1.15.0",
+    "apollo-server-micro": "^2.23.0",
+    "graphql": "^15.5.0",
     "next": "latest",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "swr": "^0.5.5"
   },
   "devDependencies": {
     "@testing-library/react": "^11.2.5",
