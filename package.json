@@ -30,6 +30,7 @@
     "@sentry/node": "^6.2.5",
     "@sentry/react": "^6.2.5",
     "@sentry/tracing": "^6.2.5",
+    "@sentry/webpack-plugin": "^1.15.0",
     "next": "latest",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
