@@ -14,15 +14,13 @@ The top 100 most starred repos on Github along with commits from the last 24 hrs
 
 ### Back-end
 
-- (GraphQL adapter for Github API)[https://github.com/octokit/graphql.js]
-- (Authentication adapter for Github API)[https://github.com/octokit/auth.js]
+- [Next.js](https://nextjs.org/) - reasoning, simplified front and back-end implementation path
+- [Adapter for Github API](https://github.com/octokit/request.js) - built in authentication handling
 
 ### Monitoring
 
-- (Sentry)[https://sentry.io]
+- [Sentry](https://sentry.io)
 
-## Deploy your own
+### Services
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-typescript-eslint-jest&project-name=with-typescript-eslint-jest&repository-name=with-typescript-eslint-jest)
+- [Vercel](https://vercel.com)
