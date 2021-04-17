@@ -7,6 +7,7 @@ const {
   SENTRY_AUTH_TOKEN,
   NODE_ENV,
   VERCEL_GIT_COMMIT_SHA,
+  GITHUB_ACCESS_TOKEN,
 } = process.env
 
 process.env.SENTRY_DSN = SENTRY_DSN
@@ -15,6 +16,8 @@ const basePath = ''
 module.exports = {
   productionBrowserSourceMaps: true,
   env: {
+    // Ensure github apis have access
+    GITHUB_ACCESS_TOKEN,
     // Make the COMMIT_SHA available to the client so that Sentry events can be
     // marked for the release they belong to. It may be undefined if running
     // outside of Vercel

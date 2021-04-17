@@ -1,6 +1,8 @@
 import { init } from '../utils/sentry'
 import type { AppProps } from 'next/app'
 
+import '../styles/global.css'
+
 init()
 
 interface AppPropsWithError extends AppProps {
