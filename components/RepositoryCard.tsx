@@ -22,7 +22,7 @@ const RespositoryCard = ({
       <div className="star-container">
         <Image
           src="/icons/star.svg"
-          height={18}
+          height={14}
           width={20}
           alt="star icon"
           className="star-icon"
@@ -43,6 +43,8 @@ const RespositoryCard = ({
         border: 1px solid ${colors.border};
         transition: color 0.15s ease, border-color 0.15s ease;
         align-self: flex-start;
+        min-width: 300px;
+        max-width: 800px;
       }
 
       .card:hover,
@@ -99,7 +101,7 @@ const RespositoryCard = ({
       }
 
       .star-icon {
-        vertical-align: middle;
+        vertical-align: baseline;
       }
 
       .star-count {
