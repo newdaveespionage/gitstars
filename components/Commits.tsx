@@ -11,22 +11,34 @@ const RepoDetail = (props: CommitItemsProps): JSX.Element => {
   return (
     <div>
       {!showCommits && (
-        <button onClick={loadCommits} className="loadCTA">
-          Tap to load commits for {props.owner}/{props.name}
+        <button
+          onClick={loadCommits}
+          className="load-cta"
+          title="use this button to load commits from the past 24 hours"
+        >
+          Tap to load commits
         </button>
       )}
       {showCommits && (
-        <>
-          <h4>Commits from the last 24 hours</h4>
+        <div className="commits-container">
+          <h4 className="commits-title">Commits from the last 24 hours</h4>
           <CommitItems {...props} />
-        </>
+        </div>
       )}
       <style jsx>{`
-        .loadCTA {
+        .load-cta {
           cursor: pointer;
           font-size: 1em;
           color: ${colors.white};
-          background: ${colors.blue600};
+          background-color: ${colors.blue600};
+        }
+
+        .commits-container {
+          border-top: 1px solid ${colors.blue500};
+        }
+
+        .commits-title {
+          font-size: 1.2em;
         }
       `}</style>
     </div>
