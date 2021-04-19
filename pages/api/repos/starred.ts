@@ -4,7 +4,10 @@ import { request } from '@octokit/request'
 
 init()
 
-const handler = async (req: NextApiRequest, res: NextApiResponse) => {
+const handler = async (
+  req: NextApiRequest,
+  res: NextApiResponse
+): Promise<void> => {
   const repositories = await request('GET /search/repositories', {
     headers: {
       authorization: `token ${process.env.GITHUB_ACCESS_TOKEN}`,
