@@ -2,6 +2,7 @@ import React from 'react'
 import { colors } from '../theme'
 import { Repository } from '../utils/repositories/types'
 import Commits from './Commits'
+import Image from 'next/image'
 
 const RespositoryCard = ({
   name,
@@ -16,7 +17,10 @@ const RespositoryCard = ({
     <div className="details">
       <p>Owner: {owner}</p>
       <p>URL: {url}</p>
-      <p>Stars: {stars}</p>
+      <div className="star-container">
+        <Image src="/icons/star.svg" height={20} width={20} alt="stars" />
+        <span>{stars}</span>
+      </div>
     </div>
     <Commits owner={owner} name={name} />
     <style jsx>{`
@@ -72,7 +76,8 @@ const RespositoryCard = ({
         font-size: 1.5rem;
       }
 
-      .commits {
+      .star-container {
+        margin-bottom: 1em;
       }
     `}</style>
   </div>
