@@ -3,6 +3,7 @@
 The top 100 most starred repos on Github along with commits from the last 24 hrs
 
 [Production Vercel domain](https://gitstars.vercel.app/)
+
 ## Architecture
 
 ### Front-end
@@ -16,10 +17,10 @@ The top 100 most starred repos on Github along with commits from the last 24 hrs
 
 ### Back-end
 
-- [Next.js](https://nextjs.org/) 
+- [Next.js](https://nextjs.org/)
   - simplified front and back-end implementation path
   - shortcuts for some app configuration steps
-- [Adapter for Github API](https://github.com/octokit/request.js) 
+- [Adapter for Github API](https://github.com/octokit/request.js)
   - built in authentication handling
   - simplifies calls to apis while not locking in to one specific format (can use GraphQL and REST, for instance)
 
@@ -30,13 +31,15 @@ The top 100 most starred repos on Github along with commits from the last 24 hrs
 ## Getting Started
 
 - Checkout repo
-- Create branch
-- Commit changes
-- Create PR
-- Review on [Vercel](https://vercel.com)
-- Promote to production on Vercel when ready
-- Review logs
+- `cp example.env.local .env.local`
+- Update `.env.local` based on directions in the comments from `example.env.local`
+- `yarn`
+- `yarn dev`
 
 ## Contributing
 
-See the issues section for any outstanding tasks
+- Review open issues
+- Create issue if none exists
+- Create branch from `develop`
+- Commit changes
+- Create PR referencing issue
