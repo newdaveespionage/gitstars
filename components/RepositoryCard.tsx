@@ -53,7 +53,7 @@ const RespositoryCard = ({
       }
 
       .details {
-        margin-top: 3rem;
+        margin-top: 1.5rem;
       }
 
       .card h3 {
@@ -61,14 +61,14 @@ const RespositoryCard = ({
         font-size: 1.5rem;
       }
 
-      .title a {
-        color: #0070f3;
+      .card a {
+        color: ${colors.blue600};
         text-decoration: none;
       }
 
-      .title a:hover,
-      .title a:focus,
-      .title a:active {
+      .card a:hover,
+      .card a:focus,
+      .card a:active {
         text-decoration: underline;
       }
 
@@ -91,7 +91,7 @@ const RespositoryCard = ({
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        margin: 1em 0;
+        margin: 1rem 0;
       }
 
       .star-container {
