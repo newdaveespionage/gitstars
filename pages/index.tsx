@@ -1,19 +1,9 @@
 import Head from 'next/head'
 
-import useSWR from 'swr'
-import RespositoryCard from '../components/RepositoryCard'
 import Footer from '../components/Footer'
-import { repoFetcher } from '../utils/fetchers'
-import { standardizeRepositories } from '../utils/repositories'
+import Repositories from '../components/Repositories'
 
 export const Home = (): JSX.Element => {
-  const { data, error } = useSWR('starred_repos', repoFetcher)
-
-  if (error) return <div>Failed to load</div>
-  if (!data) return <div>Loading...</div>
-
-  const repos = standardizeRepositories(data.items)
-
   return (
     <div className="container">
       <Head>
@@ -22,36 +12,12 @@ export const Home = (): JSX.Element => {
       </Head>
 
       <main>
-        <h1>
-          <a href="">Gitstars</a>
-        </h1>
+        <h1>Gitstars</h1>
 
-        <div className="grid">
-          {repos.map((repo) => (
-            <RespositoryCard key={repo.id} {...repo} />
-          ))}
-        </div>
+        <Repositories />
       </main>
       <Footer />
       <style jsx>{`
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        a:hover {
-          text-decoration: underline;
-        }
-
         .container {
           min-height: 100vh;
           padding: 0 0.5rem;
@@ -59,6 +25,15 @@ export const Home = (): JSX.Element => {
           flex-direction: column;
           justify-content: center;
           align-items: flex-start;
+        }
+
+        main {
+          padding: 5rem 0;
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
         }
 
         .grid {
