@@ -34,6 +34,24 @@ export const Home = (): JSX.Element => {
       </main>
       <Footer />
       <style jsx>{`
+        main {
+          padding: 5rem 0;
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+
+        a {
+          color: inherit;
+          text-decoration: none;
+        }
+
+        a:hover {
+          text-decoration: underline;
+        }
+
         .container {
           min-height: 100vh;
           padding: 0 0.5rem;
@@ -51,6 +69,21 @@ export const Home = (): JSX.Element => {
 
           max-width: 90%;
           margin-top: 3rem;
+        }
+      `}</style>
+
+      <style jsx global>{`
+        html,
+        body {
+          padding: 0;
+          margin: 0;
+          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+            sans-serif;
+        }
+
+        * {
+          box-sizing: border-box;
         }
       `}</style>
     </div>

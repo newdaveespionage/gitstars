@@ -5,8 +5,8 @@ export const standardizeCommits = (rawCommits: RawCommit[]): Commit[] => {
   const commits = rawCommits.map(
     (rawData): Commit => ({
       id: rawData.node_id,
-      name: rawData.commit.committer.name,
-      date: rawData.commit.committer.date,
+      name: rawData.commit.author.name,
+      date: rawData.commit.author.date,
       message: rawData.commit.message,
     })
   )

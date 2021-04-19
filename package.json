@@ -2,7 +2,7 @@
   "name": "with-typescript-eslint-jest",
   "author": "@erikdstock",
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "0.0.3",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -27,11 +27,6 @@
   },
   "dependencies": {
     "@octokit/request": "^5.4.15",
-    "@sentry/integrations": "^6.2.5",
-    "@sentry/node": "^6.2.5",
-    "@sentry/react": "^6.2.5",
-    "@sentry/tracing": "^6.2.5",
-    "@sentry/webpack-plugin": "^1.15.0",
     "luxon": "^1.26.0",
     "next": "latest",
     "react": "^17.0.1",

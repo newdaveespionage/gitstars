@@ -1,9 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import { init } from '../../../utils/sentry'
 import { request } from '@octokit/request'
 import { DateTime } from 'luxon'
-
-init()
 
 const handler = async (
   req: NextApiRequest,

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { colors } from '../theme'
 import CommitItems, { CommitItemsProps } from './CommitItems'
 
 const RepoDetail = (props: CommitItemsProps): JSX.Element => {
@@ -10,17 +11,37 @@ const RepoDetail = (props: CommitItemsProps): JSX.Element => {
   return (
     <div>
       {!showCommits && (
-        <div onClick={loadCommits} className="">
-          Tap to load commits for {props.owner}/{props.name}
-        </div>
+        <button
+          onClick={loadCommits}
+          className="load-cta"
+          title="use this button to load commits from the past 24 hours"
+        >
+          Tap to load commits
+        </button>
       )}
       {showCommits && (
-        <>
-          <h4>Commits from the last 24 hours</h4>
+        <div>
+          <h4 className="commits-title">Commits from the last 24 hours</h4>
           <CommitItems {...props} />
-        </>
+        </div>
       )}
-      <style jsx>{``}</style>
+      <style jsx>{`
+        .load-cta {
+          cursor: pointer;
+          font-size: 1em;
+          color: ${colors.white};
+          background-color: ${colors.blue600};
+        }
+
+        .commits-title {
+          font-size: 1.2em;
+          padding: 0.5rem 0.5rem 0.5rem 0;
+          margin-bottom: 0.5rem;
+          border: 1px dashed ${colors.blue500};
+          border-top: none;
+          border-left: none;
+        }
+      `}</style>
     </div>
   )
 }

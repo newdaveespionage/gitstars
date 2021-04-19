@@ -1,4 +1,5 @@
 import useSWR from 'swr'
+import { colors } from '../theme'
 import { standardizeCommits } from '../utils/commits'
 import { commitsFetcher } from '../utils/fetchers'
 import CommitItem from './CommitItem'
@@ -20,9 +21,9 @@ const CommitItems = ({ owner, name }: CommitItemsProps): JSX.Element => {
     <>
       {commits.length === 0 && <p>No commits found</p>}
       {commits.length > 0 && (
-        <ul>
+        <ul className="commit-list">
           {commits.map((commit) => (
-            <li key={commit.id}>
+            <li key={commit.id} className="commit-listitem">
               <CommitItem
                 id={commit.id}
                 name={commit.name}
@@ -33,6 +34,23 @@ const CommitItems = ({ owner, name }: CommitItemsProps): JSX.Element => {
           ))}
         </ul>
       )}
+      <style jsx>{`
+        .commit-list {
+          list-style: none;
+          margin: 0;
+          padding: 0;
+        }
+
+        .commit-listitem {
+          padding: 0.5em 1rem;
+          border-top: 1px dashed ${colors.blue500};
+          border-left: 1px dashed ${colors.blue500};
+          margin-top: 1rem;
+        }
+        .commit-listitem:first-child {
+          border-top: none;
+        }
+      `}</style>
     </>
   )
 }
