@@ -21,6 +21,16 @@ The top 100 most starred repos on Github along with commits from the last 24 hrs
 
 - [Sentry](https://sentry.io)
 
-### Services
+### CI/CD Services
 
 - [Vercel](https://vercel.com)
+
+## Getting Started
+
+- Checkout repo
+- Create branch
+- Commit changes
+- Create PR
+- Review on [Vercel](https://vercel.com)
+- Promote to production on Vercel when ready
+- Review logs
