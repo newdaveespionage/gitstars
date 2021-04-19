@@ -1,57 +1,31 @@
 import Head from 'next/head'
 
-import useSWR from 'swr'
-import RespositoryCard from '../components/RepositoryCard'
 import Footer from '../components/Footer'
-import { repoFetcher } from '../utils/fetchers'
-import { standardizeRepositories } from '../utils/repositories'
+import Repositories from '../components/Repositories'
+
+const description =
+  'See the current top 100 starred repositories on Github.com with commits from the past 24 hours'
 
 export const Home = (): JSX.Element => {
-  const { data, error } = useSWR('starred_repos', repoFetcher)
-
-  if (error) return <div>Failed to load</div>
-  if (!data) return <div>Loading...</div>
-
-  const repos = standardizeRepositories(data.items)
-
   return (
     <div className="container">
       <Head>
         <title>Gitstars</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta
+          name="description"
+          content={`${description}. Leverages the Github REST apis, next.js, and Vercel`}
+        />
       </Head>
 
       <main>
-        <h1>
-          <a href="">Gitstars</a>
-        </h1>
-
-        <div className="grid">
-          {repos.map((repo) => (
-            <RespositoryCard key={repo.id} {...repo} />
-          ))}
-        </div>
+        <h1>Gitstars</h1>
+        <p>{description}</p>
+        <Repositories />
       </main>
       <Footer />
       <style jsx>{`
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        a:hover {
-          text-decoration: underline;
-        }
-
         .container {
           min-height: 100vh;
           padding: 0 0.5rem;
@@ -59,6 +33,15 @@ export const Home = (): JSX.Element => {
           flex-direction: column;
           justify-content: center;
           align-items: flex-start;
+        }
+
+        main {
+          padding: 5rem 0;
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
         }
 
         .grid {
