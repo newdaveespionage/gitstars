@@ -42,8 +42,11 @@ const CommitItems = ({ owner, name }: CommitItemsProps): JSX.Element => {
         }
 
         .commit-listitem {
-          margin: 0.5em 0;
-          border-bottom: 1px solid ${colors.border};
+          padding: 0.5em 0;
+          border-top: 1px dashed ${colors.blue300};
+        }
+        .commit-listitem:first-child {
+          border-top: none;
         }
       `}</style>
     </>
