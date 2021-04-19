@@ -25,6 +25,7 @@ const CommitItem = ({
       .commit-header {
         display: flex;
         justify-content: space-between;
+        margin-bottom: 0.5rem;
       }
       .name,
       .date,

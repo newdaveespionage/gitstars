@@ -20,7 +20,7 @@ const RepoDetail = (props: CommitItemsProps): JSX.Element => {
         </button>
       )}
       {showCommits && (
-        <div className="commits-container">
+        <div>
           <h4 className="commits-title">Commits from the last 24 hours</h4>
           <CommitItems {...props} />
         </div>
@@ -33,12 +33,13 @@ const RepoDetail = (props: CommitItemsProps): JSX.Element => {
           background-color: ${colors.blue600};
         }
 
-        .commits-container {
-          border-top: 1px solid ${colors.blue500};
-        }
-
         .commits-title {
           font-size: 1.2em;
+          padding: 0.5rem 0.5rem 0.5rem 0;
+          margin-bottom: 0.5rem;
+          border: 1px dashed ${colors.blue500};
+          border-top: none;
+          border-left: none;
         }
       `}</style>
     </div>
