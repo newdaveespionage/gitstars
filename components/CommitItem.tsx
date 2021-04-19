@@ -1,3 +1,5 @@
+import { DateTime } from 'luxon'
+
 type CommitItemProps = {
   id: string
   name: string
@@ -13,7 +15,7 @@ const CommitItem = ({
 }: CommitItemProps): JSX.Element => (
   <div key={id} className="card">
     <div>{name}</div>
-    <div>{date}</div>
+    <div>{DateTime.fromISO(date).toLocaleString(DateTime.DATETIME_SHORT)}</div>
     <div>{message}</div>
   </div>
 )
