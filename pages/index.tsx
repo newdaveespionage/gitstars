@@ -1,25 +1,18 @@
 import Head from 'next/head'
-import Link from 'next/link'
 
 import useSWR from 'swr'
-
-const fetcher = () =>
-  fetch('/api/repos/starred', {
-    method: 'POST',
-    headers: {
-      'Content-type': 'application/json',
-    },
-  })
-    .then((res) => res.json())
-    .then((json) => json.data)
+import RespositoryCard from '../components/RepositoryCard'
+import Footer from '../components/Footer'
+import { repoFetcher } from '../utils/fetchers'
+import { standardizeRepositories } from '../utils/repositories'
 
 export const Home = (): JSX.Element => {
-  const { data, error } = useSWR('starred_repos', fetcher)
+  const { data, error } = useSWR('starred_repos', repoFetcher)
 
   if (error) return <div>Failed to load</div>
   if (!data) return <div>Loading...</div>
 
-  const { items } = data
+  const repos = standardizeRepositories(data.items)
 
   return (
     <div className="container">
@@ -29,40 +22,37 @@ export const Home = (): JSX.Element => {
       </Head>
 
       <main>
-        <h1 className="title">
+        <h1>
           <a href="">Gitstars</a>
         </h1>
 
         <div className="grid">
-          {items.map((repo) => (
-            <Link key={repo.id} href={`/repos/${repo.full_name}`}>
-              <div className="card">
-                <div>Name: {repo.name}</div>
-                <div>Owner: {repo.owner.login}</div>
-                <div>URL: {repo.html_url}</div>
-                <div>Description: {repo.description}</div>
-                <div>Stars: {repo.stargazers_count}</div>
-              </div>
-            </Link>
+          {repos.map((repo) => (
+            <RespositoryCard key={repo.id} {...repo} />
           ))}
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          ></a>
         </div>
       </main>
+      <Footer />
+      <style jsx>{`
+        .container {
+          min-height: 100vh;
+          padding: 0 0.5rem;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+        }
 
-      <footer>
-        <a
-          href="https://www.daveespionage.com"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Created by Dave Espionage
-        </a>
-      </footer>
+        .grid {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          flex-wrap: wrap;
 
-      <style jsx>{``}</style>
+          max-width: 90%;
+          margin-top: 3rem;
+        }
+      `}</style>
     </div>
   )
 }
