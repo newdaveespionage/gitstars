@@ -1,19 +1,29 @@
 import { NextApiRequest, NextApiResponse } from 'next'
 import { init } from '../../../utils/sentry'
 import { request } from '@octokit/request'
+import { DateTime } from 'luxon'
 
 init()
 
-const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-  const { repopath } = req.query
+const handler = async (
+  req: NextApiRequest,
+  res: NextApiResponse
+): Promise<void> => {
+  const { params } = req.query
+  const isArray = Array.isArray(params)
 
-  const repositoryDetail = await request('GET /repos/{repopath}/commits', {
+  if (!isArray) return res.status(400).end('missing parameters')
+
+  const commitsResponse = await request('GET /repos/{owner}/{name}/commits', {
     headers: {
       authorization: `token ${process.env.GITHUB_ACCESS_TOKEN}`,
     },
-    repopath: repopath,
+    owner: params[0],
+    name: params[1],
+    since: DateTime.now().minus({ hours: 24 }).toISO(),
   })
-  res.status(200).json(repositoryDetail)
+
+  res.status(200).json(commitsResponse)
 }
 
 export default handler
