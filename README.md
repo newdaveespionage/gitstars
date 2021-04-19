@@ -2,7 +2,7 @@
 
 The top 100 most starred repos on Github along with commits from the last 24 hrs
 
-[Production Vercel domain](https://gitstars-cltbm472m-daveespionage.vercel.app/)
+[Production Vercel domain](https://gitstars.vercel.app/)
 ## Architecture
 
 ### Front-end
