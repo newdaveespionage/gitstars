@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CommitItem matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="jsx-3680457408"
+  >
+    <button
+      class="jsx-3680457408 load-cta"
+      title="use this button to load commits from the past 24 hours"
+    >
+      Tap to load commits
+    </button>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`CommitItems matches snapshot 1`] = `
+<DocumentFragment>
+  <div>
+    Loading...
+  </div>
+</DocumentFragment>
+`;

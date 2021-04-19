@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CommitItem matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="jsx-2379951421 card"
+  >
+    <div
+      class="jsx-2379951421 commit-header"
+    >
+      <span
+        class="jsx-2379951421 name"
+      >
+        Test Repo Name
+      </span>
+      <span
+        class="jsx-2379951421 date"
+      >
+        4/18/2021, 8:57 PM
+      </span>
+    </div>
+    <div
+      class="jsx-2379951421 message"
+    >
+      refactor: creating snapshots
+    </div>
+  </div>
+</DocumentFragment>
+`;

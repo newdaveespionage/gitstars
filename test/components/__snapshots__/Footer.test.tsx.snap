@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CommitItem matches snapshot 1`] = `
+<DocumentFragment>
+  <footer
+    class="jsx-3840341860"
+  >
+    <a
+      class="jsx-3840341860"
+      href="https://github.com/newdaveespionage/gitstars"
+      rel="noopener noreferrer"
+      target="_blank"
+    >
+      Created by Dave Espionage
+    </a>
+  </footer>
+</DocumentFragment>
+`;
