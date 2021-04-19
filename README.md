@@ -33,3 +33,4 @@ The top 100 most starred repos on Github along with commits from the last 24 hrs
 - Create PR
 - Review on [Vercel](https://vercel.com)
 - Promote to production on Vercel when ready
+- Review logs
