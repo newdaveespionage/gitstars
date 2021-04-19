@@ -1,8 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next'
-import { init } from '../../../utils/sentry'
 import { request } from '@octokit/request'
-
-init()
 
 const handler = async (
   req: NextApiRequest,
