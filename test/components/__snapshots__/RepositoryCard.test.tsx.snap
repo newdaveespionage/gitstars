@@ -3,29 +3,29 @@
 exports[`CommitItem matches snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="jsx-3205085322 card"
+    class="jsx-4012800190 card"
     title="Test Name: ten billion stars repo"
   >
     <h3
-      class="jsx-3205085322 title"
+      class="jsx-4012800190 title"
     >
       Test Name
     </h3>
     <p
-      class="jsx-3205085322 description"
+      class="jsx-4012800190 description"
     >
       ten billion stars repo
     </p>
     <div
-      class="jsx-3205085322 details"
+      class="jsx-4012800190 details"
     >
       <p
-        class="jsx-3205085322"
+        class="jsx-4012800190"
       >
         Owned by Test Owner
       </p>
       <a
-        class="jsx-3205085322"
+        class="jsx-4012800190"
         href="https://www.github.com/testowner/testrepo"
         rel="noopener noreferrer"
         target="_blank"
@@ -33,7 +33,7 @@ exports[`CommitItem matches snapshot 1`] = `
         https://www.github.com/testowner/testrepo
       </a>
       <div
-        class="jsx-3205085322 star-container"
+        class="jsx-4012800190 star-container"
       >
         <div
           style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
@@ -45,7 +45,7 @@ exports[`CommitItem matches snapshot 1`] = `
               alt=""
               aria-hidden="true"
               role="presentation"
-              src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTgiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
+              src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMTQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
               style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
             />
           </div>
@@ -59,23 +59,23 @@ exports[`CommitItem matches snapshot 1`] = `
           />
         </div>
         <span
-          class="jsx-3205085322 star-count"
+          class="jsx-4012800190 star-count"
           title="total stars"
         >
           10000000000
         </span>
       </div>
     </div>
-    <div
-      class="jsx-3680457408"
+    <a
+      href="/commits/Test%20Owner/Test%20Name"
     >
-      <button
-        class="jsx-3680457408 load-cta"
-        title="use this button to load commits from the past 24 hours"
-      >
-        Tap to load commits
-      </button>
-    </div>
+      Show Commits
+    </a>
+    <button
+      class="jsx-4012800190"
+    >
+      Toggle Commits
+    </button>
   </div>
 </DocumentFragment>
 `;
