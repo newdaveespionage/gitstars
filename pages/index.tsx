@@ -2,6 +2,7 @@ import Head from 'next/head'
 
 import Footer from '../components/Footer'
 import Repositories from '../components/Repositories'
+import { global } from '../theme'
 
 const description =
   'See the current top 100 starred repositories on Github.com with commits from the past 24 hours'
@@ -55,20 +56,9 @@ export const Home = (): JSX.Element => {
         }
       `}</style>
 
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
-
-        * {
-          box-sizing: border-box;
-        }
-      `}</style>
+      <style jsx global>
+        {global}
+      </style>
     </div>
   )
 }
