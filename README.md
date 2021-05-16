@@ -6,9 +6,12 @@ The top 100 most starred repos on Github along with commits from the last 24 hrs
 
 ## Architecture
 
-### Front-end
+### Language
 
 - [Typescript](https://www.typescriptlang.org/)
+
+### Quality
+
 - Linting with [ESLint](https://eslint.org/)
 - Formatting with [Prettier](https://prettier.io/)
 - Linting, typechecking and formatting on by default using [`husky`](https://github.com/typicode/husky) for commit hooks
