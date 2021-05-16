@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { colors } from '../theme'
+import { colors, button, link } from '../theme'
 import { Repository } from '../utils/repositories/types'
 import Commits from './Commits'
-import Image from 'next/image'
 import Link from 'next/link'
+import RespositoryCardDetails from './RepositoryCardDetails'
 
 const RespositoryCard = ({
   name,
@@ -18,33 +18,23 @@ const RespositoryCard = ({
     <div className="card" title={`${name}: ${description}`}>
       <h3 className="title">{name}</h3>
       <p className="description">{description}</p>
-      <div className="details">
-        <p>Owned by {owner}</p>
-        <a href={url} target="_blank" rel="noopener noreferrer">
-          {url}
-        </a>
-        <div className="star-container">
-          <Image
-            src="/icons/star.svg"
-            height={14}
-            width={20}
-            alt="star icon"
-            className="star-icon"
-          />
-          <span className="star-count" title="total stars">
-            {stars}
-          </span>
-        </div>
-      </div>
-      <Link href={`commits/${owner}/${name}`}>Show Commits</Link>
+      <RespositoryCardDetails owner={owner} url={url} stars={stars} />
       <button
         onClick={() => {
           setShowCommits(!showCommits)
         }}
       >
-        Toggle Commits
+        {showCommits ? 'Hide' : 'Show'} Commits from the last 24 hours
       </button>
-      {showCommits && <Commits owner={owner} name={name} />}
+      {showCommits && (
+        <>
+          <Commits owner={owner} name={name} />
+          <br />
+          <Link href={`commits/${owner}/${name}`}>
+            <a>View in new page</a>
+          </Link>
+        </>
+      )}
       <style jsx>{`
         .card {
           flex-basis: 30%;
@@ -66,24 +56,9 @@ const RespositoryCard = ({
           border-color: ${colors.blue100};
         }
 
-        .details {
-          margin-top: 1.5rem;
-        }
-
         .card h3 {
           margin: 0 0 1rem 0;
           font-size: 1.5rem;
-        }
-
-        .card a {
-          color: ${colors.blue600};
-          text-decoration: none;
-        }
-
-        .card a:hover,
-        .card a:focus,
-        .card a:active {
-          text-decoration: underline;
         }
 
         .title {
@@ -107,19 +82,9 @@ const RespositoryCard = ({
           text-overflow: ellipsis;
           margin: 1rem 0;
         }
-
-        .star-container {
-          margin: 1rem 0;
-        }
-
-        .star-icon {
-          vertical-align: baseline;
-        }
-
-        .star-count {
-          font-size: 1.2rem;
-        }
       `}</style>
+      <style jsx>{button}</style>
+      <style jsx>{link}</style>
     </div>
   )
 }
