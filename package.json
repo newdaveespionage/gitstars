@@ -1,8 +1,8 @@
 {
-  "name": "with-typescript-eslint-jest",
-  "author": "@erikdstock",
+  "name": "gitstars",
+  "author": "@newdaveespionage",
   "license": "MIT",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -29,12 +29,14 @@
     "@octokit/request": "^5.4.15",
     "luxon": "^1.26.0",
     "next": "latest",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "swr": "^0.5.5"
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "swr": "^2.3.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.27.1",
     "@testing-library/react": "^11.2.5",
+    "@types/babel__core": "^7",
     "@types/jest": "^26.0.20",
     "@types/node": "^14.14.25",
     "@types/react": "^17.0.1",
@@ -50,6 +52,6 @@
     "jest-watch-typeahead": "^0.6.1",
     "lint-staged": "^10.0.10",
     "prettier": "^2.0.2",
-    "typescript": "^4.1.3"
+    "typescript": "^5.8.3"
   }
 }
